@@ -17,3 +17,5 @@ gem 'haml-rails', '>= 0.3.4', :group => :development
 gem 'execjs'
 gem 'therubyracer'
 gem 'pg'
+gem 'thin'
+gem 'heroku'
