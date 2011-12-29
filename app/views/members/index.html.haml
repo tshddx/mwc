@@ -1,0 +1,25 @@
+%div
+  %h4 Add Member
+  = form_for(Member.new, :remote => true, :id => "add-member") do |f|
+    = f.label :first_name, "First"
+    = f.text_field :first_name
+    = f.label :last_name, "Last"
+    = f.text_field :last_name
+    = f.label :church, "Church"
+    = f.text_field :church
+    = f.label :pm_meetings_only, "PM Meetings Only"
+    = f.check_box :pm_meetings_only
+    = f.label :nursery_needed, "Nursery Needed"
+    = f.check_box :nursery_needed
+    = f.submit
+
+%div
+  %h4 All Members
+  %table#members
+    %tr
+      %th Name
+      %th Church
+      %th PM Meetings Only
+      %th Nursery Needed
+    - @members.each do |member|
+      = render :partial => "member_tr", :locals => {:member => member}

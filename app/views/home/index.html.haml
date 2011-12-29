@@ -1,5 +1,9 @@
-%h3 Home
-- @users.each do |user|
-  %p
-    User:
-    %span= link_to user.name, user
+%h3 Menu
+%ul
+  %li= link_to "Add Members", members_path
+  %li= link_to "Calling Lists", calling_lists_path
+
+%h3 Members
+%ul
+  - @members.each do |member|
+    %li= link_to member.name, member

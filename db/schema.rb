@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111228072142) do
+ActiveRecord::Schema.define(:version => 20111229070758) do
 
   create_table "calling_lists", :force => true do |t|
     t.integer  "user_id"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(:version => 20111228072142) do
 
   create_table "meetings", :force => true do |t|
     t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "members", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.date     "birthday"
+    t.boolean  "nursery_needed"
+    t.boolean  "pm_meetings_only"
+    t.integer  "calling_list_id"
+    t.string   "church"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -65,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20111228072142) do
     t.boolean  "nursery_needed"
     t.boolean  "pm_meetings_only"
     t.integer  "calling_list_id"
+    t.string   "church"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
