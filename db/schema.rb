@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111229070758) do
+ActiveRecord::Schema.define(:version => 20111229100856) do
 
   create_table "calling_lists", :force => true do |t|
     t.integer  "user_id"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20111229070758) do
 
   create_table "meeting_attendeds", :force => true do |t|
     t.integer  "meeting_id"
-    t.integer  "user_id"
+    t.integer  "member_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20111229070758) do
 
   create_table "reservations", :force => true do |t|
     t.integer  "meeting_id"
-    t.integer  "user_id"
+    t.integer  "member_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

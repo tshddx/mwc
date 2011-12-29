@@ -1,3 +1,18 @@
+- members = []
+
 %h1
   Meeting
   = @meeting.date.rfc822
+
+%div
+  %h4 Members
+  %table
+    %tr
+      %td Name
+      %td Reserved
+      %td Attended
+    - Member.find_each do |member|
+      %tr{:id => "member-#{member.id}"}
+        %td= link_to member.name, member
+        %td= link_to(member.meetings_reserved.include?(@meeting) ? "yes" : "no", {:controller => :reservations, :action => "toggle", :member_id => member.id, :meeting_id => @meeting.id}, {:remote => true, :id => "member-reserved-#{member.id}"})
+        %td= link_to(member.meetings_attended.include?(@meeting) ? "yes" : "no", {:controller => :meeting_attendeds, :action => "toggle", :member_id => member.id, :meeting_id => @meeting.id}, {:remote => true, :id => "member-attended-#{member.id}"})

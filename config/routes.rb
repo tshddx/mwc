@@ -3,8 +3,10 @@ Mwc::Application.routes.draw do
   devise_for :users
 
   resources :users, :only => :show
+  get "reservations/toggle"
+  get "meeting_attendeds/toggle"
+
   resources :members
-  resources :reservations
   resources :meeting_attendeds
   resources :meetings
   resources :calling_lists
