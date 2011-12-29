@@ -21,5 +21,6 @@
       %th Church
       %th PM Meetings Only
       %th Nursery Needed
+      %th Delete
     - @members.each do |member|
       = render :partial => "member_tr", :locals => {:member => member}

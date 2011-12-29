@@ -4,3 +4,5 @@ $('#new_member :input')
  .val('')
  .removeAttr('checked')
  .removeAttr('selected');
+console.log $('#member_first_name').first()
+$('#member_first_name').first().focus()
