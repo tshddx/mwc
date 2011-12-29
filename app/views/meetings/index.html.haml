@@ -8,5 +8,5 @@
     %tr
       %td= link_to meeting.date, meeting
       %td= meeting.members_reserved.count
-      %td= meeting.past? ? meeting.members_attended.count : ""
+      %td= meeting.members_attended.count
       %td= meeting.members_reserved.where(:nursery_needed => true).count
