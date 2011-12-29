@@ -1,1 +1,27 @@
-%h3 Calling Lists
+= stylesheet_link_tag "calling_lists"
+
+%div.container
+  %h3 Calling Lists
+  %div.row
+    %div.span8
+      - @calling_lists.each do |calling_list|
+        %div.calling-list
+          %p.strong
+            = calling_list.owner.name
+            needs to call:
+            %table
+              %tr
+                %th Name
+                %th Phone Number
+                - calling_list.members.each do |member|
+                  %tr
+                    %td= member.name
+                    %td= member.phone_number
+    %div.span8
+      %p bunch of other stuff
+      %p bunch of other stuff
+      %p bunch of other stuff
+      %p bunch of other stuff
+      %p bunch of other stuff
+      %p bunch of other stuff
+      %p bunch of other stuff

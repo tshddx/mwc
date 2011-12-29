@@ -7,6 +7,8 @@
     = f.text_field :last_name
     = f.label :church, "Church"
     = f.text_field :church
+    = f.label :phone_number, "Phone No."
+    = f.text_field :phone_number
     = f.label :pm_meetings_only, "PM Meetings Only"
     = f.check_box :pm_meetings_only
     = f.label :nursery_needed, "Nursery Needed"
@@ -18,6 +20,7 @@
   %table#members
     %tr
       %th Name
+      %th Phone No.
       %th Church
       %th PM Meetings Only
       %th Nursery Needed
