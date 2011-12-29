@@ -1,6 +1,6 @@
 class CallingList < ActiveRecord::Base
   has_many :members
-  belongs_to :owner, :class_name => "member", :foreign_key => "user_id"
+  belongs_to :owner, :class_name => "Member"
 
-  validates :user_id, :presence => true
+  validates :member_id, :presence => true
 end
