@@ -5,6 +5,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
+gem 'coffee-rails', '~> 3.1.1'
 gem 'jquery-rails'
 gem "rspec-rails", ">= 2.7.0", :group => [:development, :test]
 gem "factory_girl_rails", ">= 1.3.0", :group => :test
